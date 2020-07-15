@@ -50,6 +50,7 @@ class Day extends Component {
       // Filter out dots so that we we process only those items which have key and color property
       const validPeriods = marking.periods.filter(d => d && d.color);
       return validPeriods.map((period, index) => {
+        console.log("<<<<<<<<<<<<<<<<<<<<<renderPeriods",period);
         const style = [
           ...baseDotStyle,
           {
@@ -71,9 +72,7 @@ class Day extends Component {
           });
         }
         return <View key={index} style={style}>
-          validPeriods.map((period, index) => {
-         return  <Text style={{fontWeight:'600', fontSize:12}}>{period.name}</Text>
-        })
+          <Text style={{fontWeight:'600', fontSize:12}}>{period.name}</Text>
           </View>;
       });
     }
